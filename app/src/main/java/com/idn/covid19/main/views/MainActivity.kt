@@ -41,12 +41,12 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun showDataUI(it: CovidModel?) {
+    private fun showDataUI(it: CovidModel?) = with(worldBinding){
         val formatter: NumberFormat = DecimalFormat("#,###")
 
-        worldBinding.txtTotalConfirm.text = formatter.format(it?.global?.totalConfirmed?.toDouble())
-        worldBinding.txtTotalRecovered.text = formatter.format(it?.global?.totalRecovered?.toDouble())
-        worldBinding.txtTotalDeaths.text = formatter.format(it?.global?.totalDeaths?.toDouble())
+        txtTotalConfirm.text = formatter.format(it?.global?.totalConfirmed?.toDouble())
+        txtTotalRecovered.text = formatter.format(it?.global?.totalRecovered?.toDouble())
+        txtTotalDeaths.text = formatter.format(it?.global?.totalDeaths?.toDouble())
     }
 
     private fun handlingError(it: Throwable?) {
